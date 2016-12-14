@@ -1,0 +1,207 @@
+<meta charset="utf-8">
+<style>
+#calc_form label {
+  font-weight: normal;
+}
+</style>
+<script>
+function getById(elem) {
+  return document.getElementById(elem);
+}
+
+function parseCheck(obj) {
+  if(obj.checked == true)
+    return parseInt(obj.value);
+  else
+    return 0;
+}
+
+function parseIndex(obj, int) {
+  if(int==false)
+    return obj.options[obj.selectedIndex].value;
+  else
+    return parseInt(obj.options[obj.selectedIndex].value);
+}
+
+function calc() {
+
+  var kurt = getById('kurt');
+  var price_kurt = 0;
+  var shtan = getById('shtan');
+  var price_shtan = 0;
+  var vodolaz = getById('vodolaz');
+  var price_vodolaz = 0;
+  var kals = getById('kals');
+  var price_kals = 0;
+  var sock = getById('sock');
+  var price_sock = 0;
+
+  if(kurt.checked == true) {
+    var size_kurt = getById('size_kurt');
+    var colors_kurt = getById('colors_kurt');
+    var prokl_kurt = getById('prokl_kurt');
+    var kant_kurt = getById('kant_kurt');
+    var utepl_kurt = getById('utepl_kurt');
+    var sroki_kurt = getById('sroki_kurt');
+
+    price_kurt += parseCheck(kurt);
+    price_kurt += parseIndex(size_kurt);
+    price_kurt += parseIndex(colors_kurt);
+    price_kurt += parseCheck(prokl_kurt);
+    price_kurt += parseCheck(kant_kurt);
+    price_kurt += parseCheck(utepl_kurt);
+    price_kurt *= parseIndex(sroki_kurt,false);
+
+    result_kurt.innerHTML = price_kurt;
+  } else {
+    result_kurt.innerHTML = 0;
+  }
+
+
+  if(shtan.checked) {
+    var size_shtan = getById('size_shtan');
+    var colors_shtan = getById('colors_shtan');
+    var sex_shtan = getById('sex_shtan');
+    var prokl_shtan = getById('prokl_shtan');
+    var kant_shtan = getById('kant_shtan');
+    var utepl_shtan = getById('utepl_shtan');
+    var sroki_shtan = getById('sroki_shtan');
+
+    price_shtan += parseCheck(shtan);
+    price_shtan += parseIndex(size_shtan);
+    price_shtan += parseIndex(colors_shtan);
+    price_shtan += parseIndex(sex_shtan);
+    price_shtan += parseCheck(prokl_shtan);
+    price_shtan += parseCheck(kant_shtan);
+    price_shtan += parseCheck(utepl_shtan);
+    price_shtan *= parseIndex(sroki_shtan,false);
+
+    result_shtan.innerHTML = price_shtan;
+  } else {
+    result_shtan.innerHTML = 0;
+  }
+
+
+  if(vodolaz.checked) {
+    var size_vodolaz = getById('size_vodolaz');
+    price_vodolaz += parseCheck(vodolaz);
+    price_vodolaz += parseIndex(size_vodolaz);
+  }
+
+
+  if(kals.checked) {
+    var size_kals = getById('size_kals');
+    price_kals += parseCheck(kals);
+    price_kals += parseIndex(size_kals);
+  }
+
+  price_sock += parseCheck(sock);
+
+  total.innerHTML = price_kurt + price_shtan + price_vodolaz + price_kals + price_sock;
+}
+
+$("#calc_form input").change(calc);
+$("#calc_form select").change(calc);
+</script>
+<div id="calc_form" class="calc_form">
+  <div class="alert alert-info"><b><i>Итого:</i></b>&nbsp;<span id="total">0</span>&nbsp;руб.</div>
+  
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-md-6">
+    <div id="kurt_f" class="kurt_f">
+        <div class="checkbox"><label for="kurt"><input type="checkbox" id="kurt" value="2000">&nbsp;<strong>Куртка</strong>&nbsp;(<span id="result_kurt">0</span>&nbsp;руб.)</label></div>
+        <div class="checkbox"><label for="utepl_kurt">Утепление&nbsp;<input type="checkbox" id="utepl_kurt" value="400"></label></div>
+        <div class="checkbox"><label for="prokl_kurt">Проклейка швов&nbsp;<input type="checkbox" id="prokl_kurt" value="200"></label></div>
+        <div class="checkbox"><label for="kant_kurt">Светоотражающий кант&nbsp;<input type="checkbox" id="kant_kurt" value="100"></label></div>
+        <label for="size_kurt">Размер&nbsp;</label>
+        <select id="size_kurt">
+          <option value="0">42-44</option>
+          <option value="100">46-48</option>
+          <option value="200">50-52</option>
+          <option value="300">54-56</option>
+        </select>
+        <br>
+        <label for="colors_kurt">Цвета&nbsp;</label>
+        <select id="colors_kurt">
+          <option value="0">Ткань клиента</option>
+          <option value="200">1</option>
+          <option value="400">3</option>
+          <option value="600">Принт</option>
+        </select>
+        <br>
+        <label for="sroki_kurt">Сроки&nbsp;</label>
+        <select style="width:160px;" id="sroki_kurt">
+          <option value="1">В порядке очереди</option>
+          <option value="1.2">Через 15 дн.</option>
+          <option value="1.3">Через 10 дн.</option>
+          <option value="1.5">Через 5 дн.</option>
+          <option value="1.8">Через 3 дн.</option>
+        </select>
+    </div>
+<hr />
+    <div id="shtan_f" class="shtan_f">
+      <div class="checkbox"><label><input type="checkbox" id="shtan" value="1300">&nbsp;<strong>Штаны</strong>&nbsp;(<span id="result_shtan">0</span>&nbsp;руб.)</label></div>
+        <div class="checkbox"><label for="utepl_shtan">Утепление&nbsp;<input type="checkbox" id="utepl_shtan" value="300"></label></div>
+        <div class="checkbox"><label for="prokl_shtan">Проклейка швов&nbsp;<input type="checkbox" id="prokl_shtan" value="50"></label></div>
+        <div class="checkbox"><label for="kant_shtan">Светоотражающий кант&nbsp;<input type="checkbox" id="kant_shtan" value="50"></label></div>
+        <label for="size_shtan">Размер&nbsp;</label>
+        <select id="size_shtan">
+          <option value="0">42-44</option>
+          <option value="100">46-48</option>
+          <option value="200">50-52</option>
+          <option value="300">54-56</option>
+        </select>       
+        <br>
+        <label for="colors_shtan">Цвет&nbsp;</label>
+        <select id="colors_shtan">
+          <option value="0">Ткань клиента</option>
+          <option value="300">Другой</option>
+        </select>
+        <br>
+        <label for="sex_shtan">Тип&nbsp;</label>
+        <select id="sex_shtan">
+          <option value="0">Женский</option>
+          <option value="100">Мужской</option>
+        </select>
+        <br>
+        <label for="sroki_shtan">Сроки&nbsp;</label>
+        <select style="width:160px;" id="sroki_shtan">
+          <option value="1">В порядке очереди</option>
+          <option value="1.2">Через 15 дн.</option>
+          <option value="1.3">Через 10 дн.</option>
+          <option value="1.5">Через 5 дн.</option>
+          <option value="1.8">Через 3 дн.</option>
+        </select>
+    </div>
+  </div>
+
+
+  <div class="col-md-6">
+    <div class="termo" id="termo">
+      <div class="checkbox"><label><input type="checkbox" id="vodolaz" value="400">&nbsp;Водолазка</label>
+        <select id="size_vodolaz">
+          <option value="0">34-38</option>
+          <option value="100">40-42</option>
+          <option value="200">44-46</option>
+          <option value="300">48-50</option>
+          <option value="400">52-54</option>
+        </select>
+      </div>  
+      <div class="checkbox"><label><input type="checkbox" id="kals" value="300">&nbsp;Кальсоны</label>
+        <select id="size_kals">
+          <option value="0">34-38</option>
+          <option value="100">40-42</option>
+          <option value="200">44-46</option>
+          <option value="300">48-50</option>
+          <option value="400">52-54</option>
+        </select>
+      </div>
+        
+      <div class="checkbox"><label><input type="checkbox" id="sock" value="100">&nbsp;Носки</label></div> 
+    </div>
+    
+    </div>
+    </div>
+    </div>
+</div>

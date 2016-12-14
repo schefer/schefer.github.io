@@ -1,0 +1,44 @@
+<meta charset="utf-8">
+		<style>
+		.section { position: relative; min-width: 600px; }
+		.links { padding: 2px; width: 100%; padding-right: 365px; }
+		.links a  { float: left; display: inline-block; overflow: hidden; width: 50px; height: 60px; margin: 2px; }
+		.links a.active  { outline: 4px solid #f57900; }
+		.links  img { width: 50px; }
+		.img { position: absolute; top: 0; right: 0; margin: 0; overflow: hidden; width: 365px; }
+		.img, .img img { width: 365px; }
+
+		</style>
+		<script>
+			var param;
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.open('GET', 'photos.txt', false);
+			xmlhttp.onreadystatechange = function() {
+  				if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {	param = xmlhttp.responseText; }
+			}
+			xmlhttp.send(null);
+			$(function() {
+				for(var a = 0; a < param; a++) {
+					$("#links").append("<a href='outfit/" + a + ".jpg'><img src='outfit/" + a + ".jpg'/></a>");
+				}			
+			});
+		</script>
+		<script src="js/jquery.loupe.js"></script>
+		<script>
+			$('.zoom').loupe();
+			$("#links a").click(function() {
+				$("#links a").removeClass("active");
+				$(this).addClass("active");
+				$("#img").empty();
+				$(".loupe").remove();
+				$("#img").append("<img class='zoom' src='" + $(this).attr("href") + "' />");
+				$('.zoom').loupe();
+				return false;
+			});
+		</script>
+				<h1>Одежда</h1>
+				<p>
+				<div class="links" id="links"><div style="clear:both;"></div></div>
+				<div class="img" id="img"><img class="zoom" src="outfit/0.jpg" /></div>
+				<div style="clear:both;"></div>
+				</p>

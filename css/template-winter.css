@@ -1,0 +1,44 @@
+
+.header .ground {
+	background: url(../img/header-snow.png) repeat-x center 0;
+}
+
+.actor1 {
+	background-image: url(../img/skier1.gif);
+}
+
+.actor2 {
+	background-image: url(../img/skier2.gif);
+}
+
+.actor3 {
+	background-image: url(../img/skier3.gif);
+}
+
+.navbar {
+	background-image: url(../img/navbar-snow.png);
+	background-color: rgb(243, 245, 255);
+}
+
+.nav > li > a, 
+.navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+	color: rgb(121, 124, 143) !important;
+}
+
+.navbar-inverse .navbar-nav>.open>a,
+.navbar-header .navbar-toggle:hover,
+.navbar-header .navbar-toggle:focus,
+.nav>li>a:hover,
+.nav>li>a:focus,
+.dropdown-menu>li>a:hover,
+.dropdown-menu>li>a:focus {
+	background-color: rgba(190, 230, 235, 0.6) !important;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: rgba(190, 230, 235, 0.7);
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+	background-color: rgb(190, 230, 235) !important;
+ }

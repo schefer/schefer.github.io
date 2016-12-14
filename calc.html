@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Калькулятор - SCHEFER SPORTSWEAR</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta name="copyright" content="Shef-Er" />
+		<script>
+		function calc() {
+
+ var kurt = document.getElementById('kurt');
+ var price_kurt = 0;
+ var shtan = document.getElementById('shtan');
+ var price_shtan = 0;
+ var vodolaz = document.getElementById('vodolaz');
+ var price_vodolaz = 0;
+ var kals = document.getElementById('kals');
+ var price_kals = 0;
+ var sock = document.getElementById('sock');
+ var price_sock = 0;
+ var hat = document.getElementById('hat');
+ var price_hat = 0;
+ var balak = document.getElementById('balak');
+ var price_balak = 0;
+
+if(kurt.checked == true) {
+ var size_kurt = document.getElementById('size_kurt');
+ var colors_kurt = document.getElementById('colors_kurt');
+ var prokl_kurt = document.getElementById('prokl_kurt');
+ var kant_kurt = document.getElementById('kant_kurt');
+ var utepl_kurt = document.getElementById('utepl_kurt');
+ var sroki_kurt = document.getElementById('sroki_kurt');
+
+ price_kurt += (kurt.checked == true) ? parseInt(kurt.value) : 0;
+ price_kurt += parseInt(size_kurt.options[size_kurt.selectedIndex].value);
+ price_kurt += parseInt(colors_kurt.options[colors_kurt.selectedIndex].value);
+ price_kurt += (prokl_kurt.checked == true) ? parseInt(prokl_kurt.value) : 0;
+ price_kurt += (kant_kurt.checked == true) ? parseInt(kant_kurt.value) : 0;
+ price_kurt += (utepl_kurt.checked == true) ? parseInt(utepl_kurt.value) : 0;
+ price_kurt *= sroki_kurt.options[sroki_kurt.selectedIndex].value;
+
+ result_kurt.innerHTML = price_kurt;
+} else { result_kurt.innerHTML = 0; }
+
+
+if(shtan.checked == true) {
+ var size_shtan = document.getElementById('size_shtan');
+ var colors_shtan = document.getElementById('colors_shtan');
+ var sex_shtan = document.getElementById('sex_shtan');
+ var prokl_shtan = document.getElementById('prokl_shtan');
+ var kant_shtan = document.getElementById('kant_shtan');
+ var utepl_shtan = document.getElementById('utepl_shtan');
+ var sroki_shtan = document.getElementById('sroki_shtan');
+
+ price_shtan += (shtan.checked == true) ? parseInt(shtan.value) : 0;
+ price_shtan += parseInt(size_shtan.options[size_shtan.selectedIndex].value);
+ price_shtan += parseInt(colors_shtan.options[colors_shtan.selectedIndex].value);
+ price_shtan += parseInt(sex_shtan.options[sex_shtan.selectedIndex].value);
+ price_shtan += (prokl_shtan.checked == true) ? parseInt(prokl_shtan.value) : 0;
+ price_shtan += (kant_shtan.checked == true) ? parseInt(kant_shtan.value) : 0;
+ price_shtan += (utepl_shtan.checked == true) ? parseInt(utepl_shtan.value) : 0;
+ price_shtan *= sroki_shtan.options[sroki_shtan.selectedIndex].value;
+
+ result_shtan.innerHTML = price_shtan;
+} else { result_shtan.innerHTML = 0; }
+
+
+if(vodolaz.checked == true) {
+ var size_vodolaz = document.getElementById('size_vodolaz');
+ var tkan_vodolaz = document.getElementById('tkan_vodolaz');
+ price_vodolaz += (vodolaz.checked == true) ? parseInt(vodolaz.value) : 0;
+ price_vodolaz += parseInt(size_vodolaz.options[size_vodolaz.selectedIndex].value);
+ price_vodolaz += parseInt(tkan_vodolaz.options[tkan_vodolaz.selectedIndex].value);
+}
+
+
+if(kals.checked == true) {
+ var size_kals = document.getElementById('size_kals');
+ var tkan_kals = document.getElementById('tkan_kals');
+ price_kals += (kals.checked == true) ? parseInt(kals.value) : 0;
+ price_kals += parseInt(size_kals.options[size_kals.selectedIndex].value);
+ price_kals += parseInt(tkan_kals.options[tkan_kals.selectedIndex].value);
+}
+
+
+if(sock.checked == true) {
+ var size_sock = document.getElementById('size_sock');
+ price_sock += (sock.checked == true) ? parseInt(sock.value) : 0;
+ price_sock += parseInt(size_sock.options[size_sock.selectedIndex].value);
+}
+
+ price_hat += (hat.checked == true) ? parseInt(hat.value) : 0;
+ price_balak += (balak.checked == true) ? parseInt(balak.value) : 0;
+
+ total.innerHTML = price_kurt + price_shtan + price_vodolaz + price_kals + price_sock + price_hat + price_balak;
+}
+		</script>
+		<style>
+.calc_form { background: #dcdcdc; margin: auto; display: block; width: 570px; padding: 10px 0; line-height: 100%; border: 0; border-radius: 3px; }
+.inner_form { width: 265px; margin: 0 10px; float: left; }
+.calcline { border-bottom: 1px dotted #c8c8c8; padding: 1px 0 1px; }
+.total { width: 550px; margin: 15px 10px 0; clear: both; }
+.total fieldset { background: rgba(255,0,0,0.2); 
+.clear { clear: both; }
+		</style>
+		
+	<head>
+	<body>
+		<div id="calc_form" class="calc_form">
+		
+							<div class="inner_form">
+							<fieldset id="kurt_f">
+								<legend>
+									<label for="kurt"><b>Куртка</b>
+									</label>
+									<input type="checkbox" id="kurt" onchange="calc();" value="2000">
+								</legend>
+								<div class="calcline">
+									<label for="size_kurt">Размер:</label>
+									<select id="size_kurt" onchange="calc();">
+										<option value="0">42-44</option>
+										<option value="100">46-48</option>
+										<option value="200">50-52</option>
+										<option value="300">54-56</option>
+									</select>
+								</div>
+								<div class="calcline">
+									<label for="colors_kurt">Кол-во цветов :</label>
+									<select id="colors_kurt" onchange="calc();">
+										<option value="0">1</option>
+										<option value="200">2</option>
+										<option value="400">3</option>
+										<option value="600">Принт</option>
+									</select>
+								</div>
+								<div class="calcline">
+									<label for="prokl_kurt">Проклейка швов:</label>
+									<input type="checkbox" id="prokl_kurt" onchange="calc();"
+									value="200">
+								</div>
+								<div class="calcline">
+									<label for="kant_kurt">Светоотражающий кант:</label>
+									<input type="checkbox" id="kant_kurt" onchange="calc();"
+									value="100">
+								</div>
+								<div class="calcline">
+									<label for="utepl_kurt">Утепление:</label>
+									<input type="checkbox" id="utepl_kurt" onchange="calc();"
+									value="200">
+								</div>
+								<div class="calcline">
+									<label for="sroki_kurt"><b>Изготовление</b>
+
+									</label>
+									<select id="sroki_kurt" onchange="calc();">
+										<option value="1">В порядке очереди</option>
+										<option value="1.3">Через 10 дн.</option>
+										<option value="1.5">Через 5 дн.</option>
+										<option value="1.8">Через 3 дн.</option>
+									</select>
+								</div>
+								<fieldset>
+									<legend>Цена куртки</legend> <span id="result_kurt">0</span> руб.</fieldset>
+							</fieldset>
+							</div>
+							
+							<div class="inner_form">
+							<fieldset id="shtan_f">
+								<legend>
+									<label for="shtan"><b>Штаны</b>
+									</label>
+									<input type="checkbox" id="shtan" onchange="calc();" value="1000">
+								</legend>
+								<div class="calcline">
+									<label for="size_shtan">Размер:</label>
+									<select id="size_shtan" onchange="calc();">
+										<option value="0">42-44</option>
+										<option value="100">46-48</option>
+										<option value="200">50-52</option>
+										<option value="300">54-56</option>
+									</select>
+								</div>
+								<div class="calcline">
+									<label for="colors_shtan">Цвет :</label>
+									<select id="colors_shtan" onchange="calc();">
+										<option value="0">Чёрный</option>
+										<option value="300">Другой</option>
+									</select>
+								</div>
+								<div class="calcline">
+									<label for="sex_shtan">Тип :</label>
+									<select id="sex_shtan" onchange="calc();">
+										<option value="0">Женский</option>
+										<option value="100">Мужской</option>
+									</select>
+								</div>
+								<div class="calcline">
+									<label for="prokl_shtan">Проклейка швов:</label>
+									<input type="checkbox" id="prokl_shtan" onchange="calc();"
+									value="50">
+								</div>
+								<div class="calcline">
+									<label for="kant_shtan">Светоотражающий кант:</label>
+									<input type="checkbox" id="kant_shtan" onchange="calc();"
+									value="50">
+								</div>
+								<div class="calcline">
+									<label for="utepl_shtan">Утепление:</label>
+									<input type="checkbox" id="utepl_shtan" onchange="calc();"
+									value="200">
+								</div>
+								<div class="calcline">
+									<label for="sroki_shtan"><b>Изготовление</b>
+
+									</label>
+									<select id="sroki_shtan" onchange="calc();">
+										<option value="1">В порядке очереди</option>
+										<option value="1.3">Через 10 дн.</option>
+										<option value="1.5">Через 5 дн.</option>
+										<option value="1.8">Через 3 дн.</option>
+									</select>
+								</div>
+								<fieldset>
+									<legend>Цена штанов</legend> <span id="result_shtan">0</span> руб.</fieldset>
+							</fieldset>
+							</div>
+							
+							<div class="clear"></div>
+							
+							<div class="inner_form">
+							<fieldset id="termo_f">
+								<legend><b>Термобельё</b>
+								</legend>
+								<fieldset id="vodolaz_f">
+									<legend>
+										<label for="vodolaz"><b>Водолазка</b>
+										</label>
+										<input type="checkbox" id="vodolaz" onchange="calc();" value="700">
+									</legend>
+									<div class="calcline">
+										<label for="size_vodolaz">Размер:</label>
+										<select id="size_vodolaz" onchange="calc();">
+											<option value="0">44-46</option>
+											<option value="50">48-50</option>
+											<option value="100">50-52</option>
+											<option value="150">54-56</option>
+										</select>
+									</div>
+									<div class="calcline">
+										<label for="tkan_vodolaz">Ткань:</label>
+										<select id="tkan_vodolaz" onchange="calc();">
+											<option value="0">Тонкая</option>
+											<option value="100">Толстая</option>
+										</select>
+									</div>
+								</fieldset>
+								<fieldset id="kals_f">
+									<legend>
+										<label for="kals"><b>Кальсоны</b> 
+										</label>
+										<input type="checkbox" id="kals" onchange="calc();" value="600">
+									</legend>
+									<div class="calcline">
+										<label for="size_kals">Размер:</label>
+										<select id="size_kals" onchange="calc();">
+											<option value="0">44-46</option>
+											<option value="50">48-50</option>
+											<option value="100">50-52</option>
+											<option value="150">54-56</option>
+										</select>
+									</div>
+									<div class="calcline">
+										<label for="tkan_kals">Ткань:</label>
+										<select id="tkan_kals" onchange="calc();">
+											<option value="0">Тонкая</option>
+											<option value="100">Толстая</option>
+										</select>
+									</div>
+								</fieldset>
+							</fieldset>
+							</div>
+							
+							<div class="inner_form">
+							<fieldset id="sock_f">
+								<legend>
+									<label for="sock"><b>Носки</b> 
+									</label>
+									<input type="checkbox" id="sock" onchange="calc();" value="100">
+								</legend>
+								<label for="size_sock">Ткань:</label>
+								<select id="size_sock" onchange="calc();">
+									<option value="0">Тонкая</option>
+									<option value="50">Толстая</option>
+								</select>
+							</fieldset>
+							<label for="hat"><b>Шапка:</b> 
+							</label>
+							<input type="checkbox" id="hat" onchange="calc();" value="150">
+							<div style="clear:both;"></div>
+							<label for="balak"><b>Балаклава:</b> 
+							</label>
+							<input type="checkbox" id="balak" onchange="calc();" value="200">
+							</div>
+							<div class="total">
+							<fieldset>
+								<legend><b><i>Итого</i></b></legend> 
+								<span id="total">0</span> руб.
+							</fieldset>
+							</div>
+						</div>
+			</body>
+
+</html>
