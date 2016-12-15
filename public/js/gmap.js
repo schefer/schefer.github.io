@@ -1,3 +1,5 @@
+// API Key: AIzaSyC9xo7Bq4vAjsaRrk00YSjzTUrJKZJucMk
+
 google.maps.visualRefresh = true;
 function initialize() {
   var myLatlng = new google.maps.LatLng(56.8360658,60.5559682);
