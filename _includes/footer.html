@@ -40,30 +40,30 @@
             </ul>
         </div>
         <p>Copyright &copy; SCHEFER SPORTSWEAR <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time></p>
-        <p>Создано <a href="http://shef-er.ru" target="_blank">shef-er</a></p>
+        <p>Создано <a href="{{ site.admin.url }}" target="_blank">{{ site.admin.name }}</a></p>
     </div>
 </footer>
 
 <!-- scripts -->
-<script src="/public/js/calc.js"></script>
+<script src="/public/js/jquery-1.11.2.min.js"></script>
 <script src="/public/js/bootstrap.min.js"></script>
+<script src="/public/js/app.js"></script>
 <script src="/public/js/jquery.ajaxContentLoad.js"></script>
 <script src="/public/js/jquery.linearmove.js"></script>
 <script src="/public/js/jquery.plaxmove.js"></script>
 <script src="/public/js/jquery.loupe.js"></script>
 <script>
-//$('#section').ajaxContentLoad({attach: '.menu .nav a', startUrl: 'home.html'});
+  //$('#section').ajaxContentLoad({attach: '.menu .nav a', startUrl: 'home.html'});
 //--//
-$('.layer1').plaxmove({ratioX: 0.03});
-$('.ground').plaxmove({ratioX: 0.04});
-$('.navbar').plaxmove({ratioX: 0.04});
-$('.layer2').plaxmove({ratioX: 0.05});
+  $('.layer1').plaxmove({ratioX: 0.03});
+  $('.ground').plaxmove({ratioX: 0.04});
+  $('.navbar').plaxmove({ratioX: 0.04});
+  $('.layer2').plaxmove({ratioX: 0.05});
 //--//
-$('.actor1').linearmove({speedX: 3});
-$('.actor2').linearmove({speedX: 3.5});
-$('.actor3').linearmove({speedX: 4.5});
-</script>
-<script>
+  $('.actor1').linearmove({speedX: 3});
+  $('.actor2').linearmove({speedX: 3.5});
+  $('.actor3').linearmove({speedX: 4.5});
+//--//
   $('.zoom').loupe();
   $("#links a").click(function()
     {

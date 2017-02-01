@@ -1,25 +1,31 @@
 # Permalinks
-permalink:           pretty
+permalink:            pretty
 
 # Setup
-title:               SCHEFER SPORTSWEAR
-tagline:             
-url:                 http://xn--e1aa7aos.xn--p1acf
-paginate:            4
-baseurl:             ""
+title:                SCHEFER SPORTSWEAR
+description:          
+tagline:              
+url:                  http://xn--e1aa7aos.xn--p1acf
+paginate:             4
+baseurl:              ""
 
 # Assets
 #
 # We specify the directory for Jekyll so we can use @imports.
 sass:
-  sass_dir:          _sass
-  style:            :compressed
+  sass_dir:           _sass
+  style:              :compressed
 
 # About/contact
-author:
-  name:              Ernest Shefer
-  url:               http://shef-er.ru
-  email:             shef-er@ya.ru
+owner:
+  phone:              +7 922 14 226 14
+  email:              ctac@k66.ru
+  vk:                 sportschef
+
+admin:
+  name:               Ernest Shefer
+  email:              shef-er@ya.ru
+  url:                http://shef-er.ru
 
 # Gems
 gems:

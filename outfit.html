@@ -3,62 +3,7 @@ layout: default
 title: Одежда
 ---
 
-<style>
-.section
-{
-  position: relative;
-  min-width: 600px;
-}
-
-.img-container
-{
-  min-height: 900px;
-}
-
-.links
-{
-  padding: 2px;
-  width: 100%;
-  padding-right: 365px;
-}
-
-.links a
-{
-  float: left;
-  display: inline-block;
-  overflow: hidden;
-  width: 50px;
-  height: 60px;
-  margin: 2px;
-}
-
-.links a.active
-{
-  outline: 4px solid #f57900;
-}
-
-.links  img
-{
-  width: 50px;
-}
-
-.img
-{
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  overflow: hidden;
-}
-
-.img,
-.img img
-{
-  width: 365px;
-}
-</style>
-
-<h1>Одежда</h1>
+<h1>{{ page.title }}</h1>
 <div class="img-container">
 
   <div class="links" id="links">
@@ -73,4 +18,5 @@ title: Одежда
   <div class="img" id="img" >
     <img class="zoom" src="/public/outfit/0.jpg" />
   </div>
+
 </div>
