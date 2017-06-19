@@ -41,7 +41,7 @@ var paintBucketApp = (function () {
 
 		colorLayerData,
 		outlineLayerData,
-		totalLoadResources = 2,
+		totalLoadResources = 1,
 		curLoadResNum = 0,
 
 		// Clears the canvas.
@@ -301,8 +301,8 @@ var paintBucketApp = (function () {
             curColor = parseColorRGB(firstColor);
 
 			// Load images
-			overlayImage.onload = resourceLoaded;
-			overlayImage.src = "images/outline-overlay.png";
+			//overlayImage.onload = resourceLoaded;
+			//overlayImage.src = "images/outline-overlay.png";
 
 			outlineImage.onload = function () {
 				context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
