@@ -41,7 +41,7 @@ var paintBucketApp = (function () {
 
 		colorLayerData,
 		outlineLayerData,
-		totalLoadResources = 1,пше
+		totalLoadResources = 1,
 		curLoadResNum = 0,
 
 		// Clears the canvas.
