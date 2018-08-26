@@ -7,13 +7,7 @@
                     <a href='http://hit.ua/site_view/93659' target='_blank'>
                         <script language="javascript" type="text/javascript">
                         <!--
-                        Cd = document;
-                        Cr = "&" + Math.random();
-                        Cp = "&s=1";
-                        Cd.cookie = "b=b";
-                        if (Cd.cookie) Cp += "&c=1";
-                        Cp += "&t=" + (new Date()).getTimezoneOffset();
-                        if (self != top) Cp += "&f=1";
+                        Cd = document;Cr = "&" + Math.random();Cp = "&s=1";Cd.cookie = "b=b";if (Cd.cookie) Cp += "&c=1";Cp += "&t=" + (new Date()).getTimezoneOffset();if (self != top) Cp += "&f=1";
                         //-->
                         </script>
                         <script language="javascript1.1" type="text/javascript">
@@ -35,49 +29,18 @@
                     <!-- / hit.ua -->
                 </li>
                 <li>
-                    <!--LiveInternet counter--><script type="text/javascript">document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t26.6;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) +";h"+escape(document.title.substring(0,80)) +  ";" + Math.random() + "' border=0 width=88 height=15 alt='' title='LiveInternet: number of visitors for today is shown'><\/a>")</script><!--/LiveInternet-->
+                    <!--LiveInternet counter-->
+                    <script type="text/javascript">
+                        document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t26.6;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) +";h"+escape(document.title.substring(0,80)) +  ";" + Math.random() + "' border=0 width=88 height=15 alt='' title='LiveInternet: number of visitors for today is shown'><\/a>")
+                    </script>
+                    <!--/LiveInternet-->
                 </li>
             </ul>
         </div>
-        <p>Copyright &copy; SCHEFER SPORTSWEAR <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time></p>
+        <p>Copyright &copy; {{ site.title }} <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time></p>
         <p>Создано <a href="{{ site.admin.url }}" target="_blank">{{ site.admin.name }}</a></p>
     </div>
 </footer>
 
-<!-- scripts -->
-<script src="/public/js/jquery-1.11.2.min.js"></script>
-<script src="/public/js/bootstrap.min.js"></script>
-<script src="/public/js/app.js"></script>
-<script src="/public/js/jquery.ajaxContentLoad.js"></script>
-<script src="/public/js/jquery.linearmove.js"></script>
-<script src="/public/js/jquery.plaxmove.js"></script>
-<script src="/public/js/jquery.loupe.js"></script>
-<script>
-  //$('#section').ajaxContentLoad({attach: '.menu .nav a', startUrl: 'home.html'});
-//--//
-  $('.layer1').plaxmove({ratioX: 0.03});
-  $('.ground').plaxmove({ratioX: 0.04});
-  $('.navbar').plaxmove({ratioX: 0.04});
-  $('.layer2').plaxmove({ratioX: 0.05});
-//--//
-  $('.actor1').linearmove({speedX: 3});
-  $('.actor2').linearmove({speedX: 3.5});
-  $('.actor3').linearmove({speedX: 4.5});
-//--//
-  $('.zoom').loupe();
-  $("#links a").click(function()
-    {
-      $("#links a").removeClass("active");
-      $(this).addClass("active");
-      $("#img").empty();
-      $(".loupe").remove();
-      $("#img").append("<img class='zoom' src='" + $(this).attr("href") + "' />");
-      $('.zoom').loupe();
-      return false;
-    }
-  );
-</script>
-
-<!-- Yandex.Metrika counter --> 
-<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42538299 = new Ya.Metrika({ id:42538299, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/42538299" style="position:absolute; left:-9999px;" alt="" /></div></noscript> 
-<!-- /Yandex.Metrika counter -->
+<!-- VK Widget -->
+<div id="vk_community_messages"></div>
