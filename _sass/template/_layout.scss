@@ -28,8 +28,18 @@ body {
     padding: 0;
     height: 190px;
 
-
     background: url(/public/img/template/stage-logo.png) center 0px no-repeat;
+  }
+
+  .stage-link {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: block;
+    margin-left: -240px;
+    width: 480px;
+    height: 190px;
+    cursor: pointer;
   }
 
   canvas {
