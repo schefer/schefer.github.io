@@ -1,4 +1,4 @@
-
+// Calculator
 var calc_elem = document.getElementById('calculator');
 if (calc_elem) {
     var calc = new Calculator('calculator');
@@ -6,7 +6,7 @@ if (calc_elem) {
     calc.listen();
 }
 
-
+// Gallery
 $('.gallery-images').slick({
     slidesToShow: 1,
     slidesToScroll: 1,

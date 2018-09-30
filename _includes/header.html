@@ -1,7 +1,38 @@
+<div class="mobile-nav">
+        <nav class="container navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarNav"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Открыть меню">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-label">Меню</span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    {% for menuitem in site.data.menu %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if menuitem.url == page.url %}active{% endif %}"
+                           href="{{ menuitem.url }}"
+                           {% if menuitem.target %}target="{{ menuitem.target }}"{% endif %}>
+                            {{ menuitem.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+
 <div class="bigstage">
     <canvas id="stage"></canvas>
     <div class="container stage-logo"></div>
 </div>
+
+{% comment %}
 <header class="container header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
@@ -10,7 +41,7 @@
                 data-target="#navbarNav"
                 aria-controls="navbarNav"
                 aria-expanded="false"
-                aria-label="Переключить меню">
+                aria-label="Открыть меню">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -29,3 +60,4 @@
         </div>
     </nav>
 </header>
+{% endcomment %}
