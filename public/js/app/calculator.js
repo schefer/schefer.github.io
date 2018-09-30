@@ -84,3 +84,10 @@ Calculator.prototype = {
         //inputs[i].addEventListener('change', function(){ context.refresh.call(context); }, false);
     },
 };
+
+var calc_elem = document.getElementById('calculator');
+if (calc_elem) {
+    var calc = new Calculator('calculator');
+    calc.refresh();
+    calc.listen();
+}
