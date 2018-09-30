@@ -85,7 +85,6 @@ body {
     .nav-item {
       margin-left: .5rem;
       margin-right: .5rem;
-
     }
 
     .nav-link {
@@ -98,6 +97,17 @@ body {
 
     .nav-link.active {
       font-weight: 600;
+    }
+  }
+
+
+  @include media-breakpoint-down(md) {
+
+    .navbar-nav {
+      .nav-item {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
     }
   }
 }
