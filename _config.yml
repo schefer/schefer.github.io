@@ -33,7 +33,11 @@ admin:
   email:              shef-er@ya.ru
   url:                http://shef-er.ru
 
-# Gems
+# Plugins
+plugins:
+- jekyll-paginate
+- jekyll-gist
+
 gems:
   - jekyll-paginate
   - jekyll-gist
