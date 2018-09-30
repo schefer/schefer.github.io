@@ -3,38 +3,19 @@ layout: default
 title: Одежда
 ---
 
-{% comment %}
-<div class="img-container">
+{% assign outfit_dir = '/public/img/gallery/' %}
 
-  <div class="links" id="links">
-    {% for number in (0..55) %}
-    <a href="/public/outfit/{{ number }}.jpg">
-      <img src="/public/outfit/{{ number }}.jpg"/>
-    </a>
-    {% endfor %}
-    <div style="clear:both;"></div>
-  </div>
-
-  <div class="img" id="img" >
-    <img class="zoom" src="/public/outfit/0.jpg" />
-  </div>
-
-</div>
-{% endcomment %}
-
-{% assign outfit_dir = '/public/img/outfit/' %}
 <div class="gallery">
 
     <div class="gallery-images">
-
-        {% for number in (0..55) %}
+        {% for number in (1..56) %}
         <div class="gallery-image">
             <img src="{{outfit_dir}}{{number}}.jpg"/>
         </div>
         {% endfor %}
     </div>
     <div class="gallery-thumbs">
-        {% for number in (0..55) %}
+        {% for number in (1..56) %}
         <div class="gallery-thumb"
              style="background-image: url({{outfit_dir}}{{number}}.jpg);">
         </div>
