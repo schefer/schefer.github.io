@@ -123,8 +123,15 @@ Scene.prototype.render = function () {
 
 Scene.prototype.init = function () {
 
+    var basePath = "/public/img/template/";
+
+    var now = new Date();
+    var currentYear = now.getFullYear();
+    if (now < new Date(currentYear, 2, 1))
+        basePath += "winter/";
+
     this.addActor({
-        image: "/public/img/template/actor.png",
+        image: basePath + "actor.png",
         x: 40,
         y: 155,
         velocity: 5,
@@ -134,7 +141,7 @@ Scene.prototype.init = function () {
     });
 
     this.addActor({
-        image: "/public/img/template/actor1.png",
+        image: basePath + "actor1.png",
         x: 0,
         y: 155,
         velocity: 6,
@@ -144,7 +151,7 @@ Scene.prototype.init = function () {
     });
 
     this.addActor({
-        image: "/public/img/template/actor2.png",
+        image: basePath + "actor2.png",
         x: 50,
         y: 155,
         velocity: 7,

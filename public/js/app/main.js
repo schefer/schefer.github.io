@@ -1,3 +1,10 @@
+//Season change
+var now = new Date();
+var currentYear = now.getFullYear();
+if (now < new Date(currentYear, 2, 1))
+    document.body.className = "winter";
+
+
 // Google Map
 google.maps.visualRefresh = true;
 function initialize() {

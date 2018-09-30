@@ -3,6 +3,9 @@ $header-gradient-end-color:   #E1F5FE;
 $body-gradient-start-color: #9ccc65;
 $body-gradient-end-color:   #33691e;
 
+$body-winter-gradient-start-color: #FAFAFF;
+$body-winter-gradient-end-color:   #FAFAFF;
+
 $body-gradient-start: 220px;
 $body-gradient-end: 100%;
 
@@ -50,6 +53,33 @@ body {
 
     height: 190px;
   }
+}
+
+body.winter {
+  background-color: white;
+  background-image: none;
+
+  .bigstage {
+    background: url(/public/img/template/winter/stage-background.png) center center repeat-x;
+  }
+
+  .stage-logo {
+    background: url(/public/img/template/winter/stage-logo.png) center 0px no-repeat;
+  }
+
+  .main-container {
+    border: 1px solid rgba(221,221,221,1);
+  }
+
+  .footer {
+
+    color: $body-color;
+    a {
+      color: $body-color;
+      border-color: $body-color;
+    }
+  }
+
 }
 
 .mobile-nav {
