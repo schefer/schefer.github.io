@@ -340,5 +340,7 @@ var paintBucketApp = (function () {
 
 
 $(document).ready(function () {
-    paintBucketApp.init();
+
+    if(document.getElementById('canvasPaint'))
+    	paintBucketApp.init();
 });
