@@ -1,22 +1,50 @@
-<script src="/public/js/jquery-1.11.2.min.js"></script>
-<script src="/public/js/bootstrap.min.js"></script>
-<script src="/public/js/app.js"></script>
+{% for item in site.data.scripts %}
+<script src="/public/{{item}}.js"></script>
+{% endfor %}
+
+<!-- VK Group -->
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?83"></script>
+<script type="text/javascript">
+    VK.Widgets.Group("vk_groups", {
+        mode: 3
+    }, 49500436);
+</script>
+
+<!-- VK Widget -->
+<div id="vk_community_messages"><!--<div class="vk-tooltip">Задать вопрос</div>--></div>
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
+<script type="text/javascript">
+    VK.Widgets.CommunityMessages("vk_community_messages",
+        49500436,
+        {
+            disableExpandChatSound: "1",
+        }
+    );
+</script>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42538299 = new Ya.Metrika({ id:42538299, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/42538299" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<!-- Deprecated -->
+<!--
 <script src="/public/js/jquery.ajaxContentLoad.js"></script>
 <script src="/public/js/jquery.linearmove.js"></script>
 <script src="/public/js/jquery.plaxmove.js"></script>
 <script src="/public/js/jquery.loupe.js"></script>
 <script>
     //$('#section').ajaxContentLoad({attach: '.menu .nav a', startUrl: 'home.html'});
-    //--//
+    //&#45;&#45;//
     $('.layer1').plaxmove({ratioX: 0.03});
     $('.ground').plaxmove({ratioX: 0.04});
     $('.navbar').plaxmove({ratioX: 0.04});
     $('.layer2').plaxmove({ratioX: 0.05});
-    //--//
+    //&#45;&#45;//
     $('.actor1').linearmove({speedX: 3});
     $('.actor2').linearmove({speedX: 3.5});
     $('.actor3').linearmove({speedX: 4.5});
-    //--//
+    //&#45;&#45;//
     $('.zoom').loupe();
     $("#links a").click(function()
         {
@@ -30,30 +58,4 @@
         }
     );
 </script>
-
-<script type="text/javascript" src="https://vk.com/js/api/openapi.js?159"></script>
-
-<!-- VK Group -->
-<script src="//vk.com/js/api/openapi.js?83"></script>
-<script>
-    VK.Widgets.Group("vk_groups", {
-        mode: 0,
-        width: "200",
-        height: "320"
-    }, 49500436);
-</script>
-
-<!-- VK Widget -->
-<script type="text/javascript">
-    VK.Widgets.CommunityMessages("vk_community_messages",
-        49500436,
-        {
-            disableExpandChatSound: "1",
-            disableButtonTooltip: "1"
-        }
-    );
-</script>
-
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter42538299 = new Ya.Metrika({ id:42538299, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true, trackHash:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/42538299" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+-->

@@ -1,35 +1,31 @@
-<div class="navbar navbar-inverse" role="navigation">
-    <div class="header">
-        <div class="plax-layer layer1"></div>
-        <div class="plax-layer ground"></div>
-        <div class="plax-layer layer2"></div>
-        <div class="nonplax-layer">
-            <div class="actor1" id="actor1"></div>
-            <div class="actor2" id="actor2"></div>
-            <div class="actor3" id="actor3"></div>
-        </div>
-    </div>
-    <!-- <menu> -->
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-        </div>
-        <div class="collapse navbar-collapse menu">
-            <ul class="nav navbar-nav">
-                <li><a href="/">Начало</a></li>
-                <li><a href="/outfit">Одежда</a></li>
-                <li><a href="/contacts">Контакты</a></li>
-                <li><a href="/calculator">Калькулятор</a></li>
-                <li><a href="/faq">Ответы&nbsp;на&nbsp;вопросы</a></li>
-                <li><a target="_blank" href="/paint">Сам себе дизайнер</a></li>
+<div class="bigstage">
+    <canvas id="stage"></canvas>
+    <div class="container stage-logo"></div>
+</div>
+<header class="container header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Переключить меню">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                {% for menuitem in site.data.menu %}
+                <li class="nav-item">
+                    <a class="nav-link {% if menuitem.url == page.url %}active{% endif %}"
+                       href="{{ menuitem.url }}"
+                       {% if menuitem.target %}target="{{ menuitem.target }}"{% endif %}>
+                        {{ menuitem.title }}
+                    </a>
+                </li>
+                {% endfor %}
             </ul>
         </div>
-        <!-- </menu> -->
-    </div>
-</div>
-
+    </nav>
+</header>

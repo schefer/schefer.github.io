@@ -1,0 +1,18 @@
+- title: Начало
+  url: /
+
+- title: Одежда
+  url: /outfit/
+
+#- title: Контакты
+#  url: /contacts
+
+- title: Калькулятор
+  url: /calculator/
+
+- title: Ответы&nbsp;на&nbsp;вопросы
+  url: /faq/
+
+- title: Сам себе дизайнер
+  url: /paint/
+  target: _blank

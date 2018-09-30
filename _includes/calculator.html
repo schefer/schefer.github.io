@@ -1,0 +1,78 @@
+{% assign calc = site.data.calculator %}
+
+{% if calc %}
+<div id="calculator" class="calculator">
+
+    <div class="alert alert-light">
+        <p>
+            <b>Итого:</b>
+            <span id="calculator_total">0</span>&nbsp;руб.
+        </p>
+        <hr>
+        <p class="font-italic">* Подобрать варианты сочетаний цветов в куртке можно в разделе "<a href="/paint" target="_blank">Сам себе дизайнер</a>"</p>
+    </div>
+
+    <div class="card-columns">
+
+        {% for card in calc %}
+        <div class="card bg-light mb-3" id="{{card.name}}">
+
+            <div class="card-header">
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input"
+                           id="{{card.name}}_price"
+                           value="{{card.value}}">
+                    <label class="custom-control-label"
+                           for="{{card.name}}_price">
+                        {{card.label}}:
+                        <span id="{{card.name}}_total">0</span>&nbsp;руб.
+                    </label>
+                </div>
+
+            </div>
+
+            <div class="card-body">
+                {% for item in card.items %}
+                {% case item.type %}
+                {% when 'select' %}
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text"
+                               for="{{card.name}}_{{item.name}}">
+                            {{item.label}}
+                        </label>
+                    </div>
+                    <select class="custom-select"
+                            id="{{card.name}}_{{item.name}}"
+                            data-action="{{item.action|default:'add'}}">
+                        {% for option in item.options %}
+                        <option value="{{option.value}}">
+                            {{option.label}}
+                        </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                {% when 'checkbox' %}
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox"
+                           class="custom-control-input"
+                           id="{{card.name}}_{{item.name}}"
+                           value="{{item.value}}">
+                    <label class="custom-control-label"
+                           for="{{card.name}}_{{item.name}}">
+                        {{item.label}}
+                    </label>
+                </div>
+                {% else %}
+                {% endcase %}
+                {% endfor %}
+            </div>
+
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+{% endif %}

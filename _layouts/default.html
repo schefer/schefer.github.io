@@ -1,39 +1,25 @@
-<!DOCTYPE html>
-<html lang="ru">
+---
+layout: base
+---
 
-<!-- <head> -->
-{% include head.html %}
-<!-- </head> -->
+    {% include header.html %}
 
-<body>
-<!-- <header> -->
-  {% include header.html %}
-<!-- </header> -->
+    <div class="container main-container">
 
-<!-- <content> -->
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-9 col-md-9" role="main">
-        <div class="section" id="section">
-          {{ content }}
-        </div>
-        <div class="gmap-container">
-          <div class="gmap" id="gmap"></div>
-        </div>
-      </div>
-      <div class="col-md-3">
-          <div id="vk_groups"></div>
-      </div>
+        <section class="section">
+            {{ content }}
+        </section>
+
+        <section class="section section-gmap">
+            <div class="gmap" id="gmap"></div>
+        </section>
+
+        <section class="section section-info">
+            {% include contacts.html %}
+        </section>
+
     </div>
-  </div>
-<!-- </content> -->
 
-<!-- <footer> -->
-  {% include footer.html %}
-<!-- <footer> -->
+    {% include footer.html %}
 
-<!-- scripts -->
-{% include scripts.html %}
-
-</body>
-</html>
+</div>

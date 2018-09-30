@@ -1,68 +1,10 @@
-<footer class="bs-footer">
-    <div class="container">
-        <div class="bs-social">
-            <ul class=" counters">
-                <li>
-                    <!-- hit.ua -->
-                    <a href='http://hit.ua/site_view/93659' target='_blank'>
-                        <script language="javascript" type="text/javascript">
-                        <!--
-                        Cd = document;Cr = "&" + Math.random();Cp = "&s=1";Cd.cookie = "b=b";if (Cd.cookie) Cp += "&c=1";Cp += "&t=" + (new Date()).getTimezoneOffset();if (self != top) Cp += "&f=1";
-                        //-->
-                        </script>
-                        <script language="javascript1.1" type="text/javascript">
-                        <!--
-                        if (navigator.javaEnabled()) Cp += "&j=1";
-                        //-->
-                        </script>
-                        <script language="javascript1.2" type="text/javascript">
-                        <!--
-                        if (typeof(screen) != 'undefined') Cp += "&w=" + screen.width + "&h=" + screen.height + "&d=" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth);
-                        //-->
-                        </script>
-                        <script language="javascript" type="text/javascript">
-                        <!--
-                        Cd.write("<img src='http://c.hit.ua/hit?i=93659&g=0&x=4" + Cp + Cr + "&r=" + escape(Cd.referrer) + "&u=" + escape(window.location.href) + "' border='0' width='88' height='15' " + "alt='hit.ua: посетителей за сегодня' title='hit.ua: посетителей за сегодня'/>");
-                        //-->
-                        </script>
-                    </a>
-                    <!-- / hit.ua -->
-                </li>
-                <li>
-                    <!--LiveInternet counter-->
-                    <script type="text/javascript">
-                        document.write("<a href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t26.6;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) +";h"+escape(document.title.substring(0,80)) +  ";" + Math.random() + "' border=0 width=88 height=15 alt='' title='LiveInternet: number of visitors for today is shown'><\/a>")
-                    </script>
-                    <!--/LiveInternet-->
-                </li>
-            </ul>
+<footer class="container footer">
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <span>Copyright &copy; {{ site.title }} <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time></span>
         </div>
-        <p>Copyright &copy; {{ site.title }} <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time></p>
-        <p>Создано <a href="{{ site.admin.url }}" target="_blank">{{ site.admin.name }}</a></p>
+        <div class="col-md-6 col-sm-12 text-md-right">
+            <span>Создано <a href="{{ site.admin.url }}" target="_blank">{{ site.admin.name }}</a></span>
+        </div>
     </div>
 </footer>
-
-<!-- VK Widget -->
-<div id="vk_community_messages">
-    <div class="vk-tooltip">Задать вопрос</div></div>
-<style>
-    .vk-tooltip {
-        z-index: -1;
-        position: absolute;
-        top: 5px;
-        right: 70px;
-
-        padding: 0 20px 0;
-        height: 40px;
-
-        border: none;
-        border-radius: 5px;
-
-        background-color: rgba(255,255,255,1);
-
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-
-        line-height: 40px;
-        white-space: nowrap;
-    }
-</style>

@@ -3,7 +3,7 @@ layout: default
 title: Одежда
 ---
 
-<h1>{{ page.title }}</h1>
+{% comment %}
 <div class="img-container">
 
   <div class="links" id="links">
@@ -19,4 +19,25 @@ title: Одежда
     <img class="zoom" src="/public/outfit/0.jpg" />
   </div>
 
+</div>
+{% endcomment %}
+
+{% assign outfit_dir = '/public/img/outfit/' %}
+<div class="gallery">
+
+    <div class="gallery-images">
+
+        {% for number in (0..55) %}
+        <div class="gallery-image">
+            <img src="{{outfit_dir}}{{number}}.jpg"/>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="gallery-thumbs">
+        {% for number in (0..55) %}
+        <div class="gallery-thumb"
+             style="background-image: url({{outfit_dir}}{{number}}.jpg);">
+        </div>
+        {% endfor %}
+    </div>
 </div>

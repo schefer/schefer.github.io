@@ -1,0 +1,36 @@
+html {
+  font-family: $root-font-family;
+  font-size:   $root-font-size;
+  font-weight: $root-font-weight;
+  line-height: $root-line-height;
+}
+
+body {
+  background-color: rgba(245,245,245,1);
+}
+
+
+.main-container a,
+.footer a {
+  border-bottom: 1px dotted $link-color;
+
+  color: $link-color;
+  text-decoration: none;
+
+  // `:focus` is linked to `:hover` for basic accessibility
+  &:hover,
+  &:focus {
+    border-bottom: 0;
+
+    color: $link-color;
+    text-decoration: none;
+  }
+
+  strong {
+    color: inherit;
+  }
+}
+
+.custom-select {
+  -webkit-appearance: none;
+}
