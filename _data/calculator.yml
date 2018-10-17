@@ -1,6 +1,6 @@
 - name:     jacket
   label:    Куртка
-  value:    2200
+  value:    2500
   items:
     - type:     select
       name:     size
@@ -71,7 +71,7 @@
 
 - name:     pants
   label:    Штаны
-  value:    1500
+  value:    1800
   items:
   - type:     select
     name:     size
@@ -137,7 +137,7 @@
 
 - name:     sweater
   label:    Водолазка
-  value:    500
+  value:    600
   items:
   - type:     select
     name:     size
@@ -160,7 +160,7 @@
 
 - name:     underpants
   label:    Кальсоны
-  value:    400
+  value:    500
   items:
   - type:     select
     name:     size
