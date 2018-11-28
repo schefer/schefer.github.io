@@ -12,7 +12,6 @@ var paintBucketApp = (function () {
             b: 0
         },
         colorPalette = [
-            [ 255,  255,  255],
             [ 35,  35,  35],
             [ 80,  71,  71],
             [136, 137, 132],
@@ -226,19 +225,11 @@ var paintBucketApp = (function () {
         // Add mouse event listeners to the canvas
         createMouseEvents = function () {
 
-            canvas.addEventListener('click', function (e) {
+            canvas.on('click', function (e) {
+
                 // Mouse down location
             	var mouse = getCanvasCursorPos(this, e);
                 console.log('Cursor position: ', mouse.x, mouse.y);
-
-
-				// TODO: fix wrong coloring (or cursor position)
-                var viewportOffset = canvas.getBoundingClientRect(),
-                    canvasOffsetX = viewportOffset.left + window.scrollX,
-                    canvasOffsetY = viewportOffset.top + window.scrollY;
-                console.log('Canvas offset: ', canvasOffsetX, canvasOffsetY);
-
-
 
 				// Mouse click location on drawing area
 				paintAt(mouse.x, mouse.y);
@@ -259,10 +250,10 @@ var paintBucketApp = (function () {
 
             });
 
-            /*canvasPaletteContainer.height($( window ).height());
+            canvasPaletteContainer.height($( window ).height());
             $(window).resize(function () {
                 canvasPaletteContainer.height($(this).height());
-            });*/
+            });
         },
 
 		// Calls the redraw function after all neccessary resources are loaded.
@@ -293,26 +284,14 @@ var paintBucketApp = (function () {
 		// Creates a canvas element, loads images, adds events, and draws the canvas for the first time.
 		init = function () {
 
-            canvas = document.getElementById('canvasPaint');
+            canvas = $('.canvas-outline');
             canvasPalette = $('.canvas-palette');
             canvasPaletteContainer = $('.canvas-palette-container');
 
-            canvas.setAttribute('width', canvasWidth);
-            canvas.setAttribute('height', canvasHeight);
+            canvas.get(0).setAttribute('width', canvasWidth);
+            canvas.get(0).setAttribute('height', canvasHeight);
 
-            context = canvas.getContext("2d");
-
-            var downloadLink = document.createElement('a');
-            downloadLink.innerHTML = 'Сохранить изображение';
-            downloadLink.className = 'btn btn-primary';
-            downloadLink.href = canvas.toDataURL();
-            downloadLink.download = 'my-outfit.png';
-            downloadLink.addEventListener('click', function(e) {
-                downloadLink.href = canvas.toDataURL();
-                downloadLink.download = 'my-outfit.png';
-            }, false);
-
-            canvasPaletteContainer[0].appendChild(downloadLink);
+            context = canvas.get(0).getContext("2d");
 
             createColorPalette();
 
@@ -339,17 +318,10 @@ var paintBucketApp = (function () {
 				colorLayerData = context.getImageData(0, 0, canvasWidth, canvasHeight);
 				resourceLoaded();
 			};
-			outlineImage.src = "/public/img/paint/outline.png";
+			outlineImage.src = "images/outline.png";
 		};
 
 	return {
 		init: init
 	};
 }());
-
-
-$(document).ready(function () {
-
-    if(document.getElementById('canvasPaint'))
-    	paintBucketApp.init();
-});

@@ -1,0 +1,106 @@
+---
+layout: compress
+title: Сам себе дизайнер
+---
+<style>
+    body {
+        background: white !important;
+    }
+
+    .canvas-container
+    {
+        position: relative;
+        top: 0;
+        left: 180px;
+    }
+
+    .canvas-container p
+    {
+        padding: 10px 0;
+        padding-left: 20px;
+    }
+
+    .canvas-palette-container
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 180px;
+        padding: 0;
+        z-index: 999;
+
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        background-color: rgba(255, 255, 255, 0.8);
+        border-color: rgba(200, 200, 200, 0.8);
+        border-style: dashed;
+        border-width: 0;
+        border-right-width: 1px;
+    }
+
+    .canvas-palette-container .logo
+    {
+        display: block;
+        margin: 4px auto;
+        width: 142px;
+        height: 142px;
+        background: center center url(/public/img/logo.png) no-repeat;
+        -webkit-filter: grayscale(100%) brightness(180%);
+        filter: grayscale(100%) brightness(180%);
+        -webkit-transition: all 0.5s ease-in-out;
+        transition: all 0.5s ease-in-out;
+    }
+    .canvas-palette-container .logo:hover
+    {
+        -webkit-filter: grayscale(0%) brightness(100%);
+        filter: grayscale(0%) brightness(100%);
+    }
+
+    .canvas-palette
+    {
+        position: relative;
+        margin-top: 20px;
+        width: 100%;
+        padding: 0;
+
+        text-align: center;
+    }
+    .canvas-palette div
+    {
+        display: inline-block;
+        margin: 10px;
+        width: 0;
+        height: 0;
+        padding: 15px;
+
+        border-radius: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    .canvas-palette div.active
+    {
+        -webkit-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1), 0px 0px 0px 8px rgba(200, 200, 200, 0.8);;
+        -moz-box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1), 0px 0px 0px 8px rgba(200, 200, 200, 0.8);;
+        box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 1), 0px 0px 0px 8px rgba(200, 200, 200, 0.8);;
+    }
+</style>
+
+
+<div class="canvas-palette-container">
+    <a href="/" class="logo" title="Вернуться на сайт"></a>
+    <div class="canvas-palette"></div>
+</div>
+<div class="canvas-container">
+    <p>Полученый вариант изображения можно сохранить на компьютер</p>
+    <canvas class="canvas-outline"></canvas>
+</div>
+
+
+<!-- scripts -->
+<script src="/public/js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="paintBucketApp.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    paintBucketApp.init();
+});
+</script>
