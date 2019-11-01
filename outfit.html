@@ -4,18 +4,19 @@ title: Одежда
 ---
 
 {% assign outfit_dir = '/public/img/gallery/' %}
+{% assign count = site.data.photo.count %}
 
 <div class="gallery">
 
     <div class="gallery-images">
-        {% for number in (1..56) %}
+        {% for number in (1..count) %}
         <div class="gallery-image">
             <img src="{{outfit_dir}}{{number}}.jpg"/>
         </div>
         {% endfor %}
     </div>
     <div class="gallery-thumbs">
-        {% for number in (1..56) %}
+        {% for number in (1..count) %}
         <div class="gallery-thumb"
              style="background-image: url({{outfit_dir}}{{number}}.jpg);">
         </div>
