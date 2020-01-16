@@ -26,6 +26,9 @@ var paintBucketApp = (function () {
             [241, 104,  21],
             [243,   9,  10],
             [222,  23,  51],
+            [134, 189, 235],
+            [28, 235, 77],
+            [218, 255, 79],
         ],
 
 		outlineImage = new Image(),
