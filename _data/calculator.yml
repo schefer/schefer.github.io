@@ -135,48 +135,48 @@
     value:    100
 
 
-- name:     sweater
-  label:    Водолазка
-  value:    600
-  items:
-  - type:     select
-    name:     size
-    label:    Размер
-    options:
-    - label:      34-38
-      value:      0
-      
-    - label:      40-42
-      value:      100
+#- name:     sweater
+#  label:    Водолазка
+#  value:    600
+#  items:
+#  - type:     select
+#    name:     size
+#    label:    Размер
+#    options:
+#    - label:      34-38
+#      value:      0
+#      
+#    - label:      40-42
+#      value:      100
+#
+#    - label:      44-46
+#      value:      200
+#
+#    - label:      48-50
+#      value:      300
+#
+#    - label:      52-54
+#      value:      400
 
-    - label:      44-46
-      value:      200
-
-    - label:      48-50
-      value:      300
-
-    - label:      52-54
-      value:      400
-
-- name:     underpants
-  label:    Кальсоны
-  value:    500
-  items:
-  - type:     select
-    name:     size
-    label:    Размер
-    options:
-    - label:      34-38
-      value:      0
-      
-    - label:      40-42
-      value:      100
-
-    - label:      44-46
-      value:      200
-
-    - label:      48-50
-      value:      300
-
-    - label:      52-54
-      value:      400
+#- name:     underpants
+#  label:    Кальсоны
+#  value:    500
+#  items:
+#  - type:     select
+#    name:     size
+#    label:    Размер
+#    options:
+#    - label:      34-38
+#      value:      0
+#      
+#    - label:      40-42
+#      value:      100
+#
+#    - label:      44-46
+#      value:      200
+#
+#    - label:      48-50
+#      value:      300
+#
+#    - label:      52-54
+#      value:      400
