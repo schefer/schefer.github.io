@@ -4,24 +4,35 @@ title: Контакты
 ---
 
 <style>
-.gmap-container { height: 400px; } 
-.gm-style-iw, .gm-style-iw div { overflow: hidden !important; }
+.gmap-container {
+  height: 400px;
+}
+
+.gm-style-iw,
+.gm-style-iw div
+{
+  overflow: hidden !important;
+}
 </style>
 
 <h1>Контакты</h1>
 <div class="contacts">
   <div class="info row">
+
     <div class="col-md-4">
       <h3>Телефон</h3>
       <h4>{{ site.owner.phone }}</h4>
     </div>
+
     <div class="col-md-4">
       <h3>E-mail</h3>
       <h4>{{ site.owner.email }}</h4>
     </div>
+
     <div class="col-md-4">
       <h3>Вконтакте</h3>
       <h4><a href="https://vk.com/{{ site.owner.vk }}" target="_blank">vk.com/{{ site.owner.vk }}</a></h4>
     </div>
+
   </div>
 </div>

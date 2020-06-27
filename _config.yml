@@ -1,25 +1,10 @@
-# Permalinks
-permalink:            pretty
-
-# Setup
 title:                SCHEF SPORTSWEAR
-description:          
-tagline:              
+tagline:              ""
+description:          ""
+keywords:             ""
 url:                  http://xn--e1aa7aos.xn--p1acf
-paginate:             4
 baseurl:              ""
-
-# Compression
-compress_html:
-  clippings: all
-  comments:  ["<!-- ", " -->"]
-
-# Assets
-#
-# We specify the directory for Jekyll so we can use @imports.
-sass:
-  sass_dir:           _sass
-  style:              compressed
+permalink:            pretty
 
 # About/contact
 owner:
@@ -33,11 +18,19 @@ admin:
   email:              shef-er@ya.ru
   url:                http://shef-er.ru
 
-# Plugins
-plugins:
-- jekyll-paginate
-- jekyll-gist
+# Compression
+compress_html:
+  clippings: all
+  comments:  ["<!-- ", " -->"]
 
-gems:
-  - jekyll-paginate
-  - jekyll-gist
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:           _sass
+  style:              compressed
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+plugins:
+- jekyll-gist
+- jekyll-relative-links
