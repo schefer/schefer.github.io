@@ -1,6 +1,6 @@
 - name:     jacket
   label:    Куртка
-  value:    2500
+  value:    4000
   items:
     - type:     select
       name:     size
@@ -71,7 +71,7 @@
 
 - name:     pants
   label:    Штаны
-  value:    1800
+  value:    2500
   items:
   - type:     select
     name:     size
